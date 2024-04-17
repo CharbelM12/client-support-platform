@@ -1,0 +1,4680 @@
+{
+	"info": {
+		"_postman_id": "d0f474e0-506d-491f-859f-2325fb1038cc",
+		"name": "Support Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29210119"
+	},
+	"item": [
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "createCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Product Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Product Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:26:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "getCategories",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "708"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c4-X+GR+1OYpvQTPSSwIl/l2id1zaU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:28:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"categories\": [\n        {\n            \"_id\": \"661f5d5ebd3a160154a45224\",\n            \"name\": \"Billing Inquiries\",\n            \"description\": \"Support related to billing questions, payment methods, invoice discrepancies, and subscription management\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:25:50.673Z\",\n            \"updatedAt\": \"2024-04-17T05:25:50.673Z\"\n        },\n        {\n            \"_id\": \"661f5d92bd3a160154a45228\",\n            \"name\": \"Product Information\",\n            \"description\": \" Queries about product features, functionalities, specifications, and compatibility with other systems\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:26:42.169Z\",\n            \"updatedAt\": \"2024-04-17T05:26:42.169Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalCategoriesCount\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "getCategoryDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/details/:categoryId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"details",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "661f5d5ebd3a160154a45224"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/category/details/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"details",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d5ebd3a160154a45224"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "300"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12c-QR/zdSI0qWUGWMPZnq1wiD9iVzc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:33:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"661f5d5ebd3a160154a45224\",\n    \"name\": \"Billing Inquiries\",\n    \"description\": \"Support related to billing questions, payment methods, invoice discrepancies, and subscription management\",\n    \"createdBy\": \"661d711e0833057e1987abd1\",\n    \"createdAt\": \"2024-04-17T05:25:50.673Z\",\n    \"updatedAt\": \"2024-04-17T05:25:50.673Z\"\n}"
+						},
+						{
+							"name": "category not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/category/details/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"details",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d5ebd3a160154a45222"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-ZBcMFwNskjWMOx32KkkMw+WDgm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:33:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Products Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/:categoryId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "661f5d92bd3a160154a45228"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "category not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Product Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/category/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d5ebd3a160154a45222"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-ZBcMFwNskjWMOx32KkkMw+WDgm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:36:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Products Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/category/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d92bd3a160154a45228"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:38:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Products Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/category/:categoryId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								":categoryId"
+							],
+							"variable": [
+								{
+									"key": "categoryId",
+									"value": "661f5d92bd3a160154a45228"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Products Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/category/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d92bd3a160154a45228"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:44:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "deleteCategory",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Products Information\",\r\n    \"description\":\" Queries about product features, functionalities, specifications, and compatibility with other systems\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/category/:categoryId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										":categoryId"
+									],
+									"variable": [
+										{
+											"key": "categoryId",
+											"value": "661f5d92bd3a160154a45228"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-ZBcMFwNskjWMOx32KkkMw+WDgm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:46:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getCategoriesByAdmin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/category/by-admin?userId=661d711e0833057e1987abd1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"category",
+								"by-admin"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "661d711e0833057e1987abd1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/category/by-admin?userId=661d711e0833057e1987abd1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"by-admin"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "661d711e0833057e1987abd1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "642"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"282-TM8w933UOQdBi60PTJlpEBxAQyc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:43:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"661f5d5ebd3a160154a45224\",\n        \"name\": \"Billing Inquiries\",\n        \"description\": \"Support related to billing questions, payment methods, invoice discrepancies, and subscription management\",\n        \"createdBy\": \"661d711e0833057e1987abd1\",\n        \"createdAt\": \"2024-04-17T05:25:50.673Z\",\n        \"updatedAt\": \"2024-04-17T05:25:50.673Z\"\n    },\n    {\n        \"_id\": \"661f5d92bd3a160154a45228\",\n        \"name\": \"Products Information\",\n        \"description\": \" Queries about product features, functionalities, specifications, and compatibility with other systems\",\n        \"createdBy\": \"661d711e0833057e1987abd1\",\n        \"createdAt\": \"2024-04-17T05:26:42.169Z\",\n        \"updatedAt\": \"2024-04-17T05:38:12.310Z\",\n        \"updatedBy\": \"661d711e0833057e1987abd1\"\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password1234\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}signup",
+							"host": [
+								"{{url}}signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password1234\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:04:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "conflict error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password1234\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/signup",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-+1iTNtgbUByP295TMTaQKuiba7A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:05:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Conflict\",\n    \"statusCode\": 409\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data=JSON.parse(responseBody)\r",
+									"postman.setGlobalVariable(\"accessToken\",data.accessToken)\r",
+									"postman.setGlobalVariable(\"refreshToken\",data.refreshToken)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "invalidcredentials",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}login",
+									"host": [
+										"{{url}}login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-wWS+x5++P08yoevCsjzpPPBU870\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:08:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"The credentials you have entered are incorrect\"\n}"
+						},
+						{
+							"name": "deactivated account",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}login",
+									"host": [
+										"{{url}}login"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-pU0GL97TLyAKydgr4SU008PoPX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:11:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"your account is deactivated\"\n}"
+						},
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"password\":\"password1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"147-5erkwSrgoCsN87qJKvKJRGDtq/U\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:25:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refreshToken\": \"GXXq4f62Jq6SrNb58JUgfRuimkY7khrI\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjFmNGE1ZTI3NWMyMzZhMzY2N2Y5OWMiLCJpYXQiOjE3MTMzMjc5MTIsImV4cCI6MTcxMzMyODgxMn0.I0LUKMwP6xciSgh-yfqPFzohUH_8DGAOrSEBTAwgWuw\",\n    \"accessTokenExpiry\": \"2024-04-17T04:40:12.008Z\",\n    \"userId\": \"661f4a5e275c236a3667f99c\"\n}"
+						},
+						{
+							"name": "forbidden error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel2m@hotmail.com\",\r\n    \"password\":\"password12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 08:31:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\":\"password1234\",\r\n    \"newPassword\":\"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/change-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "incorrect credentials",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\":\"password123\",\r\n    \"newPassword\":\"password1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/change-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"change-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-wWS+x5++P08yoevCsjzpPPBU870\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:29:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"The credentials you have entered are incorrect\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"currentPassword\":\"password1234\",\r\n    \"newPassword\":\"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/change-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:36:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "deactivateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/deactivate/:userId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"deactivate",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "661f4a5e275c236a3667f99c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/deactivate/:userId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"deactivate",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "661f4a5e275c236a3667f99c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:52:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "activateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/activate/:userId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"activate",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "661f4a5e275c236a3667f99c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/activate/:userId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"activate",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "661f4a5e275c236a3667f99c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 04:54:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "addAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/add/admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"add",
+								"admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/add/admin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"add",
+										"admin"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-+1iTNtgbUByP295TMTaQKuiba7A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:00:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Conflict\",\n    \"statusCode\": 409\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/add/admin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"add",
+										"admin"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:01:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "addEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/add/employee",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"add",
+								"employee"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "conflict",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/add/employee",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"add",
+										"employee"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-+1iTNtgbUByP295TMTaQKuiba7A\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:02:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Conflict\",\n    \"statusCode\": 409\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\",\r\n    \"firstName\":\"charbel\",\r\n    \"lastName\":\"mounayer\",\r\n    \"isVip\":true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/add/employee",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"add",
+										"employee"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:03:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "cmsLogin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data=JSON.parse(responseBody)\r",
+									"postman.setGlobalVariable(\"accessToken\",data.accessToken)\r",
+									"postman.setGlobalVariable(\"refreshToken\",data.refreshToken)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel2m@hotmail.com\",\r\n    \"password\":\"password12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/cms/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"cms",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel2m@hotmail.com\",\r\n    \"password\":\"password12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/cms/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"cms",
+										"login"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"147-RwyL5kaCnY1qYB/gp94nzZAdXGs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:07:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refreshToken\": \"cQDXUpXceMOXvXIamxIGWpp94d09Pd0s\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjFkNzExZTA4MzMwNTdlMTk4N2FiZDEiLCJpYXQiOjE3MTMzMzA0MzMsImV4cCI6MTcxMzMzMTMzM30.MHFztmlczPTq-iESC9aHzT_u_ufCwiQegew6R-V1ReU\",\n    \"accessTokenExpiry\": \"2024-04-17T05:22:13.831Z\",\n    \"userId\": \"661d711e0833057e1987abd1\"\n}"
+						},
+						{
+							"name": "forbidden",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"elie1m@hotmail.com\",\r\n    \"password\":\"password1234\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/cms/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"cms",
+										"login"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:08:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "makeCmsAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/add/admin/:userId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"add",
+								"admin",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "661f582416ac27d587a810da"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/user/add/admin/:userId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"add",
+										"admin",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "661f582416ac27d587a810da"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:13:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "getCmsUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/cms",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"cms"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/cms",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"cms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "660"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"294-KMUo6mfp1JBgss/ybfjUnzVk8EQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:17:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"users\": [\n        {\n            \"_id\": \"661d711e0833057e1987abd1\",\n            \"email\": \"charbel2m@hotmail.com\",\n            \"firstName\": \"charbel\",\n            \"lastName\": \"mounayer\",\n            \"isVip\": true,\n            \"isAdmin\": true,\n            \"isEmployee\": false,\n            \"isLocked\": false,\n            \"lockedUntil\": null,\n            \"isActivated\": true,\n            \"createdAt\": \"2024-04-15T18:25:34.742Z\",\n            \"updatedAt\": \"2024-04-15T18:25:34.742Z\"\n        },\n        {\n            \"_id\": \"661f582416ac27d587a810da\",\n            \"email\": \"charbel1m@hotmail.com\",\n            \"firstName\": \"charbel\",\n            \"lastName\": \"mounayer\",\n            \"isVip\": true,\n            \"isAdmin\": true,\n            \"isEmployee\": false,\n            \"isLocked\": false,\n            \"isActivated\": true,\n            \"createdAt\": \"2024-04-17T05:03:32.069Z\",\n            \"updatedAt\": \"2024-04-17T05:13:06.935Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalUsersCount\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "getCmsUserDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/cms/details/:userId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"cms",
+								"details",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "661f582416ac27d587a810da"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user/cms/details/:userId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user",
+										"cms",
+										"details",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "661f582416ac27d587a810da"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "271"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10f-Zvy/mh9ia//n2SWCnev1Gg9LcdU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:21:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"661f582416ac27d587a810da\",\n    \"email\": \"charbel1m@hotmail.com\",\n    \"firstName\": \"charbel\",\n    \"lastName\": \"mounayer\",\n    \"isVip\": true,\n    \"isAdmin\": true,\n    \"isEmployee\": false,\n    \"isLocked\": false,\n    \"isActivated\": true,\n    \"createdAt\": \"2024-04-17T05:03:32.069Z\",\n    \"updatedAt\": \"2024-04-17T05:13:06.935Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "otp",
+			"item": [
+				{
+					"name": "forgotPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/otp/forgot-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"otp",
+								"forgot-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/forgot-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:54:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "email not in db",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel5m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/forgot-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:56:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "deactivated user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/forgot-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-pU0GL97TLyAKydgr4SU008PoPX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:00:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"your account is deactivated\"\n}"
+						},
+						{
+							"name": "locked account when retry count exceeded 5",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/forgot-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-kvQeWjALM4TJxLfWz/OVzO1hgL0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Your account has been locked\"\n}"
+						}
+					]
+				},
+				{
+					"name": "resendOtp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/otp/forgot-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"otp",
+								"forgot-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/resend",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"resend"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:54:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "deactivated user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/resend",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"resend"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-pU0GL97TLyAKydgr4SU008PoPX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:00:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 403,\n    \"message\": \"your account is deactivated\"\n}"
+						},
+						{
+							"name": "locked account when retry count exceeded 5",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"charbel1m@hotmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/resend",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"resend"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-kvQeWjALM4TJxLfWz/OVzO1hgL0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:04:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Your account has been locked\"\n}"
+						}
+					]
+				},
+				{
+					"name": "validateOtp",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/otp/validate",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"otp",
+								"validate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/validate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:22:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "invalid otp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6096,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/validate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:24:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						},
+						{
+							"name": "incorrect verification token",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/validate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:27:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						},
+						{
+							"name": "otp expired",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/validate",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"validate"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:31:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						}
+					]
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "expired otp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\",\r\n    \"newPassword\":\"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"reset-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:38:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\",\r\n    \"newPassword\":\"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:39:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "incorrect otp",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6096,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05j\",\r\n    \"newPassword\":\"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"reset-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:41:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						},
+						{
+							"name": "incorrect verification token",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"otp\":6095,\r\n    \"verificationToken\":\"0HMZVnbCFmWswRlL0MZ7vf7gqzQ9F05e\",\r\n    \"newPassword\":\"password1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/otp/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"otp",
+										"reset-password"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-uLnWIvPNa1uzq9RzeH8oQelj9mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:44:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Invalid OTP\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "complaint",
+			"item": [
+				{
+					"name": "createComplaint",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Homepage\",\r\n    \"body\":\"homepage billing information section is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45224\",\"661f63efb4f063da328a2267\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Billing information\",\r\n    \"body\":\"billing information is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45224\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/complaint/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:50:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "invalid category id",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\":\"Billing information\",\r\n    \"body\":\"billing information is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45226\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/complaint/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "49"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31-ZBcMFwNskjWMOx32KkkMw+WDgm4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:51:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getMyComplaints",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getMyComplaints",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "719"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2cf-vz3m7VvBpH5o8+rbGzCwmiwstYI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 05:57:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        },\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T05:55:08.281Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "getcomplaintDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/details/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"details",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2263"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/details/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"details",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f63ccb4f063da328a2263"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-L5i+WGKzsuxLbjqvCB2Q7e8PtA8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:03:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"661f63ccb4f063da328a2263\",\n    \"title\": \"Billing information#1\",\n    \"body\": \"billing information is not working\",\n    \"categoryIds\": [\n        \"661f5d5ebd3a160154a45224\"\n    ],\n    \"status\": \"PENDING\",\n    \"createdBy\": \"661d711e0833057e1987abd1\",\n    \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n    \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n}"
+						},
+						{
+							"name": "complaint not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/details/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"details",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f63ccb4f063da328a2264"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:04:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+						},
+						{
+							"name": "forbidden error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/details/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"details",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f63ccb4f063da328a2263"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:08:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteComplaint",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "forbidden error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f643cb4f063da328a226c"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:13:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						},
+						{
+							"name": "complaint not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f643cb4f063da328a226b"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:14:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "updatestatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/admin/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226c"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updatestatus",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/complaint/admin/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"admin",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f643cb4f063da328a226c"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:22:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "complaint not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/complaint/admin/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"admin",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f643cb4f063da328a226b"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:27:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+						}
+					]
+				},
+				{
+					"name": "getClientsComplaint",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "filter by status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/admin/client?status=INPROGRESS",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"admin",
+										"client"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "INPROGRESS"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "432"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b0-GnHZcR+s9DyAFzjgiHTY1ntZxjA\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:30:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"INPROGRESS\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T06:22:44.618Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 1\n}"
+						},
+						{
+							"name": "filter by userId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/admin/client?userId=661d711e0833057e1987abd1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"admin",
+										"client"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "661d711e0833057e1987abd1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "722"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2d2-5mlBBoGSZHpw37tvDkAbCLkH4sI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:32:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"INPROGRESS\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T06:22:44.618Z\"\n        },\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 2\n}"
+						},
+						{
+							"name": "without filter with pagination",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/admin/client?page=1&limit=1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"admin",
+										"client"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "395"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18b-WNG24sioU781m3BjJbteRLUlDA8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:36:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 2,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": true,\n    \"totalComplaintCount\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "getComplaintsGroupedByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/by-status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"by-status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "getComplaintsGroupedByStatus",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/complaint/by-status",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										"by-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "445"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1bd-D9OMMeTXNd8CMpKrqdaU+hfbmcM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:41:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"status\": \"INPROGRESS\"\n        },\n        \"complaints\": [\n            {\n                \"title\": \"Homepage#2\",\n                \"body\": \"homepage billing information section is not working\",\n                \"categoryIds\": [\n                    \"661f5d5ebd3a160154a45224\",\n                    \"661f63efb4f063da328a2267\"\n                ],\n                \"createdBy\": \"661d711e0833057e1987abd1\"\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"status\": \"PENDING\"\n        },\n        \"complaints\": [\n            {\n                \"title\": \"Billing information#1\",\n                \"body\": \"billing information is not working\",\n                \"categoryIds\": [\n                    \"661f5d5ebd3a160154a45224\"\n                ],\n                \"createdBy\": \"661d711e0833057e1987abd1\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "deleteComplaint",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2263"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f63ccb4f063da328a2263"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:44:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "complaint not found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f63ccb4f063da328a2262"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "50"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:45:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+						},
+						{
+							"name": "forbidden error",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/complaint/:complaintId",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"complaint",
+										":complaintId"
+									],
+									"variable": [
+										{
+											"key": "complaintId",
+											"value": "661f643cb4f063da328a226c"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 06:49:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "refreshToken",
+			"item": [
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\":\"RlMnylnVAFdmMu53CS2szV3pycf6siTP\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/refresh-token/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"refresh-token",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "327"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"147-rBDI/tAK3pXlJ1945DRopQ+Do0M\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:55:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refreshToken\": \"vaptJiKA0gXXixRHf8UDFoUwZ7elKjPA\",\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjFmNTk0NDE2YWMyN2Q1ODdhODEwZTUiLCJpYXQiOjE3MTMzNDA1MTIsImV4cCI6MTcxMzM0MTQxMn0.LUWQMQqdnxCy_kpUOdWq-6UYbA7O5CNqoymWtZaX5RM\",\n    \"accessTokenExpiry\": \"2024-04-17T08:10:12.112Z\",\n    \"userId\": \"661f594416ac27d587a810e5\"\n}"
+						},
+						{
+							"name": "incorrect refresh token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\":\"RlMnylnVAFdmMu53CS2szV3pycf6siTc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/refresh-token/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"refresh-token",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-SeCfYftG72KnwSFJVQImPp3gaew\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 07:56:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Refresh token not found\"\n}"
+						},
+						{
+							"name": "refresh token expired",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\":\"vaptJiKA0gXXixRHf8UDFoUwZ7elKjPA\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/refresh-token/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"refresh-token",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-SeCfYftG72KnwSFJVQImPp3gaew\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 17 Apr 2024 08:00:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 401,\n    \"message\": \"Refresh token not found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
