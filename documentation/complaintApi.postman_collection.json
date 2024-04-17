@@ -1,0 +1,1247 @@
+{
+	"info": {
+		"_postman_id": "a0131de3-84b4-4882-9e14-433da3e4c91c",
+		"name": "complaintApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29210119"
+	},
+	"item": [
+		{
+			"name": "createComplaint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Homepage\",\r\n    \"body\":\"homepage billing information section is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45224\",\"661f63efb4f063da328a2267\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/complaint/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Billing information\",\r\n    \"body\":\"billing information is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45224\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 05:50:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "invalid category id",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Billing information\",\r\n    \"body\":\"billing information is not working\",\r\n    \"categoryIds\":[\"661f5d5ebd3a160154a45226\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "49"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"31-ZBcMFwNskjWMOx32KkkMw+WDgm4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 05:51:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Category not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getMyComplaints",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/complaint/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getMyComplaints",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "719"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2cf-vz3m7VvBpH5o8+rbGzCwmiwstYI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 05:57:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        },\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T05:55:08.281Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "getcomplaintDetails",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/complaint/details/:complaintId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						"details",
+						":complaintId"
+					],
+					"variable": [
+						{
+							"key": "complaintId",
+							"value": "661f63ccb4f063da328a2263"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/details/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"details",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2263"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "289"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"121-L5i+WGKzsuxLbjqvCB2Q7e8PtA8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:03:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"661f63ccb4f063da328a2263\",\n    \"title\": \"Billing information#1\",\n    \"body\": \"billing information is not working\",\n    \"categoryIds\": [\n        \"661f5d5ebd3a160154a45224\"\n    ],\n    \"status\": \"PENDING\",\n    \"createdBy\": \"661d711e0833057e1987abd1\",\n    \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n    \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n}"
+				},
+				{
+					"name": "complaint not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/details/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"details",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2264"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:04:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+				},
+				{
+					"name": "forbidden error",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/details/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"details",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2263"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:08:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteComplaint",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "forbidden error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226c"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:13:28 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+				},
+				{
+					"name": "complaint not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226b"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:14:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updatestatus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/complaint/admin/:complaintId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						"admin",
+						":complaintId"
+					],
+					"variable": [
+						{
+							"key": "complaintId",
+							"value": "661f643cb4f063da328a226c"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "updatestatus",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/admin/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226c"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:22:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "complaint not found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"INPROGRESS\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/admin/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226b"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:27:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getClientsComplaint",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "filter by status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/admin/client?status=INPROGRESS",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								"client"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "INPROGRESS"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "432"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b0-GnHZcR+s9DyAFzjgiHTY1ntZxjA\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:30:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"INPROGRESS\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T06:22:44.618Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 1\n}"
+				},
+				{
+					"name": "filter by userId",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/admin/client?userId=661d711e0833057e1987abd1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								"client"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "661d711e0833057e1987abd1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "722"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d2-5mlBBoGSZHpw37tvDkAbCLkH4sI\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:32:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f643cb4f063da328a226c\",\n            \"title\": \"Homepage#2\",\n            \"body\": \"homepage billing information section is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\",\n                \"661f63efb4f063da328a2267\"\n            ],\n            \"status\": \"INPROGRESS\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:55:08.281Z\",\n            \"updatedAt\": \"2024-04-17T06:22:44.618Z\"\n        },\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 1,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": false,\n    \"totalComplaintCount\": 2\n}"
+				},
+				{
+					"name": "without filter with pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/admin/client?page=1&limit=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"admin",
+								"client"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "395"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"18b-WNG24sioU781m3BjJbteRLUlDA8\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:36:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"complaints\": [\n        {\n            \"_id\": \"661f63ccb4f063da328a2263\",\n            \"title\": \"Billing information#1\",\n            \"body\": \"billing information is not working\",\n            \"categoryIds\": [\n                \"661f5d5ebd3a160154a45224\"\n            ],\n            \"status\": \"PENDING\",\n            \"createdBy\": \"661d711e0833057e1987abd1\",\n            \"createdAt\": \"2024-04-17T05:53:16.372Z\",\n            \"updatedAt\": \"2024-04-17T05:53:16.372Z\"\n        }\n    ],\n    \"page\": 1,\n    \"lastPage\": 2,\n    \"hasPreviousPage\": false,\n    \"hasNextPage\": true,\n    \"totalComplaintCount\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "getComplaintsGroupedByStatus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/complaint/by-status",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						"by-status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "getComplaintsGroupedByStatus",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/complaint/by-status",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								"by-status"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "445"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1bd-D9OMMeTXNd8CMpKrqdaU+hfbmcM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:41:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": {\n            \"status\": \"INPROGRESS\"\n        },\n        \"complaints\": [\n            {\n                \"title\": \"Homepage#2\",\n                \"body\": \"homepage billing information section is not working\",\n                \"categoryIds\": [\n                    \"661f5d5ebd3a160154a45224\",\n                    \"661f63efb4f063da328a2267\"\n                ],\n                \"createdBy\": \"661d711e0833057e1987abd1\"\n            }\n        ]\n    },\n    {\n        \"_id\": {\n            \"status\": \"PENDING\"\n        },\n        \"complaints\": [\n            {\n                \"title\": \"Billing information#1\",\n                \"body\": \"billing information is not working\",\n                \"categoryIds\": [\n                    \"661f5d5ebd3a160154a45224\"\n                ],\n                \"createdBy\": \"661d711e0833057e1987abd1\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "deleteComplaint",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{accessToken}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/complaint/:complaintId",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"complaint",
+						":complaintId"
+					],
+					"variable": [
+						{
+							"key": "complaintId",
+							"value": "661f63ccb4f063da328a2263"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2263"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:44:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						}
+					],
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "complaint not found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f63ccb4f063da328a2262"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "50"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"32-ugwFcGbUce8UUeDyQIwIevI8R1E\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:45:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 404,\n    \"message\": \"Complaint not found\"\n}"
+				},
+				{
+					"name": "forbidden error",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/complaint/:complaintId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"complaint",
+								":complaintId"
+							],
+							"variable": [
+								{
+									"key": "complaintId",
+									"value": "661f643cb4f063da328a226c"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"28-/A0r2gBi62UEXdaQT52VOJ1+hp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 Apr 2024 06:49:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Forbidden\",\n    \"statusCode\": 403\n}"
+				}
+			]
+		}
+	]
+}
