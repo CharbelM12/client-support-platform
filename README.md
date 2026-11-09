@@ -24,7 +24,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Client Support Platform: a [NestJS](https://github.com/nestjs/nest) backend for handling client complaints, categories, notifications, and user authentication.
 
 ## Installation
 
